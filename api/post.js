@@ -2,7 +2,7 @@ export default async function handler(req, res) {
   const TELEGRAM_TOKEN = process.env.BOT_TOKEN;
   const CHANNEL_ID = process.env.CHANNEL_ID; // e.g. "@yourchannel"
 
-  const apiUrl = "https://sfw-noob-api.vercel.app/opxx/10/desi";
+  const apiUrl = "https://nsfw-noob-api.vercel.app/xnxx/10/desi";
 
   try {
     const response = await fetch(apiUrl);
