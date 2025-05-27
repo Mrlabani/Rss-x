@@ -21,10 +21,10 @@ export default async function handler(req, res) {
       const contentUrl = item.content_url || "#";
 
       // HTML caption
-      const caption = `📌 <b>${escapeHTML(name)}</b>\n\n${escapeHTML(desc)}\n\n<b>আপলোড তারিখ:</b> ${escapeHTML(date)}`;
+      const caption = `📌 <b>${escapeHTML(name)}</b>\n\n${escapeHTML(desc)}\n\n<b>Upload Date:</b> ${escapeHTML(date)}`;
 
       const buttons = {
-        inline_keyboard: [[{ text: "🎥 ভিডিও দেখুন", url: contentUrl }]]
+        inline_keyboard: [[{ text: "🎥 Watch Video", url: contentUrl }]]
       };
 
       const tgResponse = await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendPhoto`, {
@@ -46,7 +46,7 @@ export default async function handler(req, res) {
       }
     }
 
-    return res.status(200).send("✅ সব কন্টেন্ট সফলভাবে পোস্ট করা হয়েছে");
+    return res.status(200).send("✅ All content has been successfully posted");
 
   } catch (err) {
     return res.status(500).send("❌ Error: " + err.message);
